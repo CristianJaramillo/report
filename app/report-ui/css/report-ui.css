@@ -1,0 +1,33 @@
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+#container-buttons {
+	border-bottom: 5px solid #33a6C9;
+	padding: 0.5em 0;
+	text-align: center;
+}
+.button-option {
+	background-color: #33a6c9;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 1em 0.25em;
+	width: 300px;
+}
+.button-option:hover{
+	background-color: #137795;
+}
+.report-ui{
+	background-color: #222222;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
