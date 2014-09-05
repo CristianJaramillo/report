@@ -1,0 +1,19 @@
+/* TEAM */
+	Chef: Cristian Jaramillo
+	Contact: cristian.gerar@gmail.com
+	Twitter: @juanjobernabeu
+	From: México, Azcapotzalco, México
+
+	UI developer: Roberto Nava
+	Twitter: @
+	From: 
+
+/* THANKS */
+	
+	
+
+/* SITE */
+	Last update:2013/08/17
+	Language: Spanish
+	Doctype: HTML5
+	IDE: Sublime Text, Git, Photoshop, Google Chrome

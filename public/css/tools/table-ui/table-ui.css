@@ -1,0 +1,135 @@
+#panel-controls, #panel-pagination, #panel-table{
+	border: 1px solid #DDDDDD;
+	display: block;
+	left: 10px;
+	max-width: 100%;
+	position: absolute;
+	right: 10px;
+}
+#panel-controls{
+	bottom: 402px;
+	top: 10px;	
+}
+#panel-pagination{
+	bottom: 10px;
+	top: 402px;
+}
+#panel-table{
+	bottom: 60px;
+	overflow: auto;
+	top: 60px;
+}
+#panel-table  table{
+	border-collapse: collapse;
+	width: 100%;	
+}
+#panel-table tbody{
+
+}
+#panel-table tbody tr{
+	cursor: pointer;
+}
+#panel-table tbody tr{
+	cursor: pointer;
+}
+#panel-table tbody tr:nth-child(odd){
+	background: #EBEBEB;
+}
+#panel-table tbody tr:nth-child(even){
+	background: #FFFFFF;
+}
+#panel-table tbody tr.select-tr{
+	background: rgb(79,133,187); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(79,133,187,1) 0%, rgba(79,133,187,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(79,133,187,1)), color-stop(100%,rgba(79,133,187,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */
+	color: #FFFFFF;
+}
+#panel-table tbody tr.select-tr:hover{
+	background: rgb(79,133,187); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(79,133,187,1) 0%, rgba(79,133,187,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(79,133,187,1)), color-stop(100%,rgba(79,133,187,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(79,133,187,1) 0%,rgba(79,133,187,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */
+}
+#panel-table tbody tr:hover{
+	/*background: rgba(79,133,187,0.5);*/
+	background: rgba(188,202,217,1);
+}
+#panel-table tbody tr:hover td{
+	color: #FFFFFF;
+}
+#panel-table td, #panel-table th{
+	border: 1px solid #DDDDDD;
+	padding: .25em .5em;
+}
+#panel-table tfoot{
+
+}
+#panel-table thead th{
+	background-color: #FFFFFF;
+	min-width: 250px;
+	padding: .4em 1em;
+}
+#select-page{left:15px;}
+#select-page, #select-rows, #select-table, #search-table, #update-table{
+	bottom: 4px;
+	display: inline-block;
+	position: absolute;
+	top: 4px;
+	width: auto;
+}
+#select-rows{left:272px;}
+#select-table{left:15px;}
+#search-table{right:15px;}
+#update-table{
+	background: url(img/update.png) no-repeat;
+	background-size: 30px 30px;
+	border-radius: 15px;
+	-ms-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	cursor: pointer;
+	height: 30px;
+	left: 257px;
+	outline: none;
+	width: 30px;
+	vertical-align: middle;
+}
+#update-table:hover{
+	transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-moz-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+}
+.arrow{
+	background-image: url(img/arrow.png);
+	background-size: 16px 16px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: inline-block;
+	height: 16px;
+	margin: 0 2px;
+	width: 16px;
+	vertical-align: middle;
+}
+.arrow:hover{
+	border: 1px solid #ddd;
+}
+.table-ui{
+	background-color: #FFFFFF; 
+	display: block;
+	min-height: 100%;
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
+}
