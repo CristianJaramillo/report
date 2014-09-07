@@ -36,7 +36,16 @@
 				</span>
 				<img class="logo-ipn" src="{{ asset('img/logo-ipn.png') }}">
 			</div>
-			<nav id="header-menu">
+			<nav id="header-menu" status="show">
+				<ul class="left menu" id="social-menu">
+					<li><span class="facebook"></span></li>
+					<li><span class="google"></span></li>
+					<li><span class="twitter"></span></li>
+					<li><span class="youtube"></span></li>
+				</ul>
+				<ul class="menu right" id="movile-menu">
+					<li><a id="nav-icon" href="#movile-menu"></a></li>
+				</ul>
 				@yield('menu')
 			</nav>
 		</header>

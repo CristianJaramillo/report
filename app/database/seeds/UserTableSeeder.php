@@ -49,15 +49,17 @@ class UserTableSeeder extends Seeder {
 				$user->country        = $record->country->names['es'];
 				$user->city           = $record->mostSpecificSubdivision->names['es'];
 
+				$user->authorized = $faker->randomElement([true, false]);
+
 				$user->save();
 
 			} catch (Exception $e) {
-				echo "undefined location for ip ".$ip."\n";
+				echo "undefined location for ip: ".$ip."\n";
 			}
 
 		}		
 
-		/*
+		
 		$user = new User();
 
 		$user->full_name      = 'Cristian Gerardo Jaramillo Cruz';
@@ -67,15 +69,16 @@ class UserTableSeeder extends Seeder {
 		$user->category_id    = '5';
 		$user->departament_id = '7';
 		$user->type           = 'admin';
+		$user->authorized     = true;
 		$user->ip_address     = '201.141.89.52';
 
 		$record = $geoIp->city($user->ip_address);
-
+		
 		$user->country = $record->country->names['es'];
 		$user->city    = $record->mostSpecificSubdivision->names['es'];
-
+		
 		$user->save();
-		*/
+		
 	}
 
 }

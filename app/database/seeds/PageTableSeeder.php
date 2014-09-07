@@ -69,6 +69,13 @@ class PageTableSeeder extends Seeder {
 				'menu'        => 'menus.admin',
 			],
 			[
+				'name'        => 'dashboard',
+				'title'       => 'Panel de Control',
+				'description' => 'Panel de Control - Sistema de Repostes',
+				'menu'        => 'menus.admin',
+				'app'         => 'apps.tool.dashboard',
+			],
+			[
 				'name'        => 'table-ui',
 				'title'       => 'Table UI',
 				'description' => 'Table UI - Sistema de Repostes',

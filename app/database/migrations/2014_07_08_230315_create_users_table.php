@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration {
 			$table->integer('category_id')->unsigned();
 			$table->foreign('category_id')->references('id')->on('categories');
 			$table->enum('type', ['admin', 'client', 'technical'])->default('client');
+			$table->boolean('authorized')->default(false);
 			$table->string('ip_address');
 			$table->string('country');
 			$table->string('city');

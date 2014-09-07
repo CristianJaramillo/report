@@ -23,14 +23,14 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	 *
 	 * @var array
 	 */	
-	protected $guarded = ['password', 'type', 'ip_address', 'country', 'city', 'remember_token'];
+	protected $guarded = ['password', 'type', 'authorized', 'ip_address', 'country', 'city', 'remember_token'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['password', 'type', 'ip_address', 'country', 'city', 'remember_token'];
+	protected $hidden = ['password', 'type', 'authorized', 'ip_address', 'country', 'city', 'remember_token'];
 
 	/**
 	 * The attibutes from the method create.
@@ -38,6 +38,28 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $fillable = ['full_name', 'username', 'email', 'password', 'departament_id', 'category_id'];
+
+	/**
+	 * 
+	 * 
+	 * @return \Lang
+	 */
+	public function getUserTypeAttribute()
+    {
+        return \Lang::get('utils.user_types.' . $this->type);
+    }
+
+	/**
+	 * The filter users not authorized
+	 * 
+	 * @param $query
+	 * @param $auth
+	 * @return $query
+	 */
+	public function scopeAuthorized($query, $auth = false)
+    {
+        return $query->where('authorized', '=', $auth);
+    }
 
 	/**
 	 * The decode to utf8.

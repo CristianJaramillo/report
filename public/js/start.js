@@ -79,6 +79,8 @@
 			setHeight();
 			// Agregamos sus funciones a los elementos.
 			setFunctions();
+			// Establecemos las dimenciones iniciales de la aplicación.
+			setWidth();
 		};
 
 		var setFunctions = function(){
@@ -86,6 +88,11 @@
 			if (el.section.app != undefined) {
 				$(window).on('resize', setHeight);
 			}
+
+			if (el.header.menu.icon != undefined) {
+				$(window).on('resize', setWidth);
+				el.header.menu.icon.on('click', setWidth);
+			};
 
 			$(document).ajaxStart(function(){
 				// Mostramos la ventana modal.
@@ -99,18 +106,27 @@
 
 		};
 
+		/**
+		 *
+		 */
 		var setHeight = function(){
 			
+			// Obtenemos el alto reale de la app
 			var h = parseInt(el.section.app.css('margin-top')) +
 					parseInt(el.section.app.css('margin-bottom')) +
 					el.section.app.outerHeight();
 			
+			console.log(h);
+
+			// Lo establecemos
 			el.section.height(h);
-			
+			 
 			if (el.outerHeight() < $(window).outerHeight()) {
 				h = $(window).outerHeight() - el.outerHeight() + h;
 				el.section.height(h);
-				el.section.app.height(h);
+				if (el.section.app.height()==0) {
+					el.section.app.height(h);
+				};
 			};
 
 			if (el.modal!=undefined){
@@ -123,9 +139,21 @@
 
 		};
 
+		/**
+		 *
+		 */
 		var setStruct = function(){
 			if (el.find('header').length) {
 				el.header = el.find('header');
+				if (el.header.find('#header-menu').length) {
+					el.header.menu = el.header.find('#header-menu');
+					if (el.header.menu.find('#nav-icon').length) {
+						el.header.menu.icon = el.header.menu.find('#nav-icon');
+					};
+					if (el.header.menu.find('#primary-menu').length) {
+						el.header.menu.primary = el.header.menu.find('#primary-menu');
+					};
+				};
 			}
 			if (el.find('#container').length) {
 				el.section = el.find('#container');
@@ -136,6 +164,60 @@
 			if (el.find('#footer').length) {
 				el.footer = el.find('#footer');
 			}
+		};
+
+		/**
+		 *
+		 */
+		var setWidth = function (e){
+
+			var w = $(window).outerWidth();
+
+			try{
+				if (e.type === 'click') {showMenu(e, w);};
+			} catch(err) {
+				// Not problem
+			}
+
+			resizeMenu(w);
+
+		};
+
+		/**
+		 *
+		 */
+		var showMenu = function(e, w){
+
+			e.preventDefault();
+
+			var status = el.header.menu.primary.attr('status') || false;
+
+			if (w > 767 || status == 'true') {
+				status = false;
+			} else {
+				status = true;
+			}
+
+			el.header.menu.primary.attr('status', status);
+		};
+
+		/**
+		 *
+		 */
+		var resizeMenu = function(w){
+			
+			var menu = 34;
+
+			var status = el.header.menu.primary.attr('status') || false;
+
+			if (status === 'true') {
+				if (w <= 767) {
+					menu += el.header.menu.primary.outerHeight();
+				};
+			}; 
+
+			el.header.menu.outerHeight(menu);
+
 		};
 
 		init();

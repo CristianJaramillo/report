@@ -123,9 +123,9 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		// Vendor
         'Way\Generators\GeneratorsServiceProvider',
-        // 'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
         // Custom
-        'Report\Components\FieldServiceProvider'
+        'Report\Components\FieldServiceProvider',
 	),
 
 	/*
@@ -195,7 +195,7 @@ return array(
 		// Custom
         'Field'           => 'Report\Components\Field',
         // Debugbar
-        // 'Debugbar' => 'Barryvdh\Debugbar\Facade',
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 	),
 
 );

@@ -1,5 +1,11 @@
-{{-- APLICATION LOGIN --}}
+{{-- APLICATION LOGIN 2011685792 --}}
 @section('app')
+
+	{{-- MESSAGE --}}
+	@if (Session::has('message'))
+		<span class="message {{ Session::get('message') }}">{{ \Lang::get('utils.message.'.Session::get('message')) }}</span>
+	@endif
+
 	{{ Form::open(['class' => 'form-contact', 'id' => 'sing-in', 'method' => 'POST', 'role' => 'form', 'route' => 'login']) }}
 		<fieldset>
 			<legend>Ingresar</legend>

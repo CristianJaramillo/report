@@ -10,6 +10,8 @@
 |
 */
 
+// \Debugbar::disable();
+
 Route::group(['before' => 'guest'], function(){
 
 	// Página del home.
@@ -38,6 +40,8 @@ Route::group(['before' => 'guest'], function(){
  |
  */
 Route::group(['before' => 'auth'], function (){
+	// Dashboard
+	Route::get('dashboard', ['as' => 'dashboard', 'uses' => 'UserController@dashboard']);
 	// Página de perfil de usuario.
 	Route::get('account/{user?}', ['as' => 'account', 'uses' => 'UserController@account']);
 	// Logout de usuario.

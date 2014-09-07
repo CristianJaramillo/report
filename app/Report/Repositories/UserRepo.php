@@ -9,6 +9,17 @@ class UserRepo extends BaseRepo
 {
 	
 	/**
+	 * The filter users not authorized
+	 * 
+	 * @param $auth
+	 * @return Eloquent
+	 */
+	public function authorized($auth = false)
+    {
+        return $this->model->authorized($auth)->get();
+    }
+
+	/**
 	 * @return Report\Entities\User
 	 */
 	public function getModel()

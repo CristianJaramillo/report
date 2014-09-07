@@ -38,6 +38,17 @@ class Page extends \Eloquent {
         return utf8_encode($this->attributes['title']);
     }
 
+    /**
+	 * The filter users not authorized
+	 * 
+	 * @param $query
+	 * @return $query
+	 */
+	public function scopeCurrent($query)
+    {
+        return $query->where('name', '=', \Route::currentRouteName());
+    }
+
 	/**
 	 * The utf8_decode description.
 	 *

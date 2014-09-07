@@ -34,9 +34,10 @@ class AuthManager extends BaseManager
 	public function getRules()
 	{
 		return [
-			'username' => 'integer|required|exists:users,username',
-			'password' => 'min:6|max:25|required',
-			'remember' => ''
+			'authorized' => 'boolean',
+			'username'   => 'integer|required|exists:users,username',
+			'password'   => 'min:6|max:25|required',
+			'remember'   => ''
 		];
 	}
 
@@ -51,7 +52,11 @@ class AuthManager extends BaseManager
     		$this->remember = true;
     	}
 
-    	$data = ['username' => $data['username'], 'password' => $data['password']];
+    	$data = [
+    		     'username'   => $data['username'], 
+    			 'password'   => $data['password'],
+    			 'authorized' => true
+    	];
 
         return $data;
     }

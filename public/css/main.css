@@ -80,14 +80,25 @@ select{
 	position: relative;
 	width: 100%;
 }
-#container, #header-title{
+#container{
 	position: relative;
+}
+#header-title {
 	height: 70px;
 }
 #header-menu{
 	background: #F2F2F2;
 	border: 1px solid #C9C9C9;
 	height: 32px;
+}
+#movile-menu li a{
+	border-left: 0;
+}
+#nav-icon{
+	background: url(../img/nav-icon.png) 8.5px 8px no-repeat;
+	background-size: 16px 16px;
+	display:inline-block;
+	vertical-align: middle;
 }
 #sing-in{
 	margin: 10% auto;
@@ -130,7 +141,7 @@ select{
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
 	-ms-border-radius: 5px;
-	-webkit-border-radius: 5px
+	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 	box-shadow:  -1px 0px 15px rgba(85, 85, 85, 0.75);
@@ -159,6 +170,10 @@ select{
 .line-form label{
 	display: inline-block;
 	padding: 10px 0;
+}
+.login-error{
+	background: #f4726d;
+	color: #FFFFFF;
 }
 .logo-ipn{
 	height: 62px;
@@ -200,8 +215,17 @@ select{
 	border-bottom-color: #FF9933;
 	text-decoration: none;
 }
-
-/*******************/
+.message{
+	border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	display: block;
+	margin: 1em 0.5em;
+	padding: 1em 0.5em;
+}
+/******************************************/
 
 		.modalmask {
 			position: fixed;
@@ -288,7 +312,8 @@ select{
 			font-size:25px;
 		}
 
-/*******************/
+/**************************************************/
+
 
 .no-app{
 	font-size: 3em;
@@ -314,6 +339,10 @@ select{
 }
 .pointer{
 	cursor: pointer;
+}
+.register-sucess{
+	background-color: #d1e9c7;
+	color: #256527;
 }
 .right{float: right;}
 .sub-line{
@@ -375,4 +404,161 @@ select{
 }
 .youtube:hover{
 	background-image: url(../img/youtube-hover.png);
+}
+
+/*
+ |
+ |-----------------------------------
+ | Media screen
+ |-----------------------------------
+ |
+ */
+
+@media screen and (min-width:1024px){
+	#movile-menu{
+		display: none;
+	}
+	#sing-in{
+		width: 40%;
+	}
+	#sing-up{
+		width: 45%;
+	}
+}
+
+@media screen and (max-width:1023px) and (min-width:768px){
+	#movile-menu{
+		display: none;
+	}
+	#sing-in{
+		width: 50%;
+	}
+	#sing-up{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width:767px) and (min-width:600px){
+	#movile-menu{
+		display: block;
+	}
+	#primary-menu{
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+	#primary-menu li{
+		display: inline-block;
+		float: none;
+	}
+	#primary-menu li a{
+		border-left: 0px;
+	}
+	#sing-in{
+		width: 60%;
+	}
+	#sing-up{
+		width: 60%;
+	}
+}
+
+@media screen and (max-width:599px) and (min-width:481px) {
+	#movile-menu{
+		display: block;
+	}
+	#primary-menu{
+		text-align: center;
+		width: 100%;
+	}
+	#primary-menu li{
+		display: inline-block;
+		float: none;
+	}
+	#primary-menu li a{
+		border-left: 0px;
+	}
+	#sing-in{
+		width: 70%;
+	}
+	#sing-up{
+		width: 70%;
+	}
+	.logo-report{width: 260px;}
+	.title{display: none;}
+}
+
+@media screen and (max-width:480px) and (min-width:361px) {
+	footer h6{
+		font-size: 10px;
+	}
+	#movile-menu{
+		display: block;
+	}
+	#primary-menu{
+		text-align: center;
+		width: 100%;
+	}
+	#primary-menu li{
+		display: inline-block;
+		float: none;
+	}
+	#primary-menu li a{
+		border-left: 0px;
+	}
+	#sing-in{
+		margin: 15% auto;
+		width: 85%;
+	}
+	
+	#sing-up{
+		width: 80%;
+	}
+	.logo-report{width: 250px;}
+	.title{display: none;}
+}
+
+@media screen and (max-width: 360px){
+	footer h6{
+		font-size: 8.5px;
+	}
+	#movile-menu{
+		display: block;
+	}
+	#movile-menu{
+		display: block;
+	}
+	#primary-menu{
+	}
+	#primary-menu li{
+		display: block;
+		width: 100%;
+	}
+	#sing-in{
+		margin: 15% auto;
+		width: 95%;
+	}
+	#sing-in a{
+		display: none;
+	}
+	#sing-up{
+		width: 95%;
+	}
+	.logo-report{width: 240px;}
+	.title{display: none;}
+}
+
+@media screen and (max-height: 1000px){
+	
+}
+
+@media screen and (max-height: 800px){
+	
+}
+
+@media screen and (max-height: 600px) and (min-height: 400px){
+	
+}
+
+@media screen and (max-height: 400px) and (min-height: 200px){
+
 }

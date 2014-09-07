@@ -34,6 +34,17 @@ class UserController extends BaseController
 	}
 
 	/**
+	 * @return \View
+	 * @throws \Report\Managers\ValidationException
+	 */
+	public function dashboard(){
+
+		$this->addParam(['users' => $this->userRepo->authorized(false)]);
+
+		return $this->show();
+	}
+
+	/**
 	 * POST /register
 	 *
 	 * @return \View
@@ -44,6 +55,8 @@ class UserController extends BaseController
         $manager = new RegisterManager($this->userRepo->newUser(), Input::all());
         
         $manager->save();
+
+        Session::flash('message', 'register-sucess');
 
         return Redirect::route('sing-in');
 	}

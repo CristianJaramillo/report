@@ -53,7 +53,7 @@ class BaseController extends Controller {
 	{
 		$page = new PageRepo();
 
-		return $page->where('name', "=", Route::currentRouteName());
+		return $page->current();
 	}
 
 	/**
@@ -65,11 +65,9 @@ class BaseController extends Controller {
 	{
 		if ( ! is_null($this->layout))
 		{
-
 			if (empty($this->params)) {
 				$this->addParam('page', $this->getPage());
 			}
-
 		}
 	}
 

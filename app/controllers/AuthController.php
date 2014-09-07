@@ -8,13 +8,15 @@ class AuthController extends BaseController {
     {
 
         $manager = new AuthManager(Input::all());
-        
+
         if ($manager->save())
         {
             return Redirect::route('account', ['user' => Str::slug(Auth::user()->full_name)]);
-        } else {
-            return App::abort(404);
         }
+
+        Session::flash('message', 'login-error');
+
+        return Redirect::back();
 
     }
 

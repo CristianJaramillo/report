@@ -56,7 +56,7 @@ App::error(function(Exception $exception, $code)
 	if ($code != 500) {
 		$page = new PageRepo();
 
-		$page = $page->where('name', "=", $code);
+		$page = $page->current();
 
 	    return Response::view('start', compact('page'), $code);
 	}
