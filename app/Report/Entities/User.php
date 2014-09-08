@@ -40,7 +40,24 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	protected $fillable = ['full_name', 'username', 'email', 'password', 'departament_id', 'category_id'];
 
 	/**
-	 * 
+	 *
+	 * return Eloquent
+	 */
+	public function category()
+    {
+    	return $this->belongsTo('Report\Entities\Category');
+    }
+
+	/**
+	 *
+	 * return Eloquent
+	 */
+	public function departament()
+    {
+    	return $this->belongsTo('Report\Entities\Departament');
+    }
+
+	/**
 	 * 
 	 * @return \Lang
 	 */

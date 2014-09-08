@@ -29,9 +29,6 @@
 #panel-table tbody tr{
 	cursor: pointer;
 }
-#panel-table tbody tr{
-	cursor: pointer;
-}
 #panel-table tbody tr:nth-child(odd){
 	background: #EBEBEB;
 }

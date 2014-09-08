@@ -16,7 +16,7 @@ class UserRepo extends BaseRepo
 	 */
 	public function authorized($auth = false)
     {
-        return $this->model->authorized($auth)->get();
+        return $this->model->with('departament', 'category')->authorized($auth)->get();
     }
 
 	/**
