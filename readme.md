@@ -29,5 +29,4 @@ Ejecutamos la siguientes lineas para crear las tablas y registros puede demorar 
 ## Bienvenido
 
 Si todo a salido bien deverias poder ver esto.
-
-<img src="https://raw.githubusercontent.com/global-developers/report-laravel/master/public/img/welcome.png"/>
+<img src="https://raw.githubusercontent.com/CristianJaramillo/report/master/public/img/welcome.png"/>
